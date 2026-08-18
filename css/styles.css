@@ -305,6 +305,7 @@ textarea {
   top: 0;
   z-index: 40;
   height: var(--header);
+  overflow: visible;
   backdrop-filter: blur(16px);
   background: var(--header-bg);
   border-bottom: 1px solid transparent;
@@ -1219,6 +1220,10 @@ h2 {
   .header-actions .btn-primary {
     display: none;
   }
+
+  .header-actions .theme-btn {
+    display: inline-flex;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1237,24 +1242,22 @@ h2 {
 }
 
 .theme-dock {
-  position: fixed;
-  left: 18px;
-  bottom: 18px;
-  z-index: 50;
+  position: relative;
+  z-index: 60;
 }
 
 .theme-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  height: 46px;
-  padding: 0 16px;
+  height: 38px;
+  padding: 0 14px;
   border-radius: 999px;
   border: 1px solid var(--line);
   background: var(--bg-card);
   color: var(--text);
   font-weight: 700;
-  box-shadow: var(--shadow);
+  font-size: 0.88rem;
   cursor: pointer;
 }
 
@@ -1276,9 +1279,9 @@ h2 {
 
 .theme-panel {
   position: absolute;
-  left: 0;
-  bottom: 58px;
-  width: min(280px, calc(100vw - 36px));
+  right: 0;
+  top: calc(100% + 10px);
+  width: min(280px, calc(100vw - 32px));
   padding: 12px;
   border-radius: 18px;
   border: 1px solid var(--line);
