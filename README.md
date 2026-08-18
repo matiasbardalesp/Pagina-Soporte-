@@ -1,6 +1,6 @@
 # B&M DualCore
 
-Página de soporte TI de **Matías Bardales** y **Jesús Mendoza**.
+Página de soporte TI de **Matias Bardales** y **Jesús Mendoza**.
 
 **B&M DualCore** junta lo serio de una firma (Bardales & Mendoza) con lo memorable de dos técnicos trabajando en paralelo: doble núcleo, un solo soporte.
 

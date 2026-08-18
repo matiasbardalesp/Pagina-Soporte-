@@ -94,7 +94,7 @@ const results = {
   },
   general: {
     title: "Soporte TI general",
-    text: "Cuéntanos el síntoma. Matías o Jesús toman el caso y el otro núcleo valida si hace falta una segunda mirada.",
+    text: "Cuéntanos el síntoma. Matias o Jesús toman el caso y el otro núcleo valida si hace falta una segunda mirada.",
     servicio: "Otro",
     tiempo: "Primera respuesta el mismo día hábil.",
   },
