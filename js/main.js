@@ -303,3 +303,40 @@ Detalle: ${data.mensaje}`;
   window.open(whatsappUrl(message), "_blank", "noopener");
   contactForm.reset();
 });
+
+const themes = ["dual", "marina", "clara", "esmeralda", "ambar"];
+const themeBtn = document.getElementById("themeBtn");
+const themePanel = document.getElementById("themePanel");
+const themeOptions = [...document.querySelectorAll(".theme-option")];
+
+function applyTheme(theme) {
+  const next = themes.includes(theme) ? theme : "dual";
+  document.documentElement.setAttribute("data-theme", next);
+  try {
+    localStorage.setItem("bm-theme", next);
+  } catch (error) {}
+  themeOptions.forEach((option) => {
+    option.classList.toggle("is-active", option.dataset.theme === next);
+  });
+}
+
+applyTheme(document.documentElement.getAttribute("data-theme") || "dual");
+
+themeBtn.addEventListener("click", () => {
+  const open = themePanel.hasAttribute("hidden");
+  themePanel.toggleAttribute("hidden", !open);
+  themeBtn.setAttribute("aria-expanded", String(open));
+});
+
+themeOptions.forEach((option) => {
+  option.addEventListener("click", () => {
+    applyTheme(option.dataset.theme);
+  });
+});
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".theme-dock")) {
+    themePanel.setAttribute("hidden", "");
+    themeBtn.setAttribute("aria-expanded", "false");
+  }
+});
